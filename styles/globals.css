@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1a1a2e;
+  --paper: #f5f0e8;
+  --sage: #4a7c59;
+  --blush: #e8927c;
+  --gold: #d4a843;
+  --mist: #8b9bb4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-full text-sm transition-all duration-200;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    background: var(--ink);
+    color: var(--paper);
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    @apply px-5 py-2.5 rounded-full text-sm border transition-all duration-200;
+    font-family: 'Syne', sans-serif;
+    border-color: var(--ink);
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  .word-chip {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm cursor-pointer transition-all duration-200 select-none text-left;
+    border: 1.5px solid transparent;
+  }
+  .word-chip-new {
+    background: white;
+    border-color: #ddd8ce;
+    color: var(--ink);
+  }
+  .word-chip-new:hover { border-color: var(--mist); }
+  .word-chip-learning {
+    background: #fff8e6;
+    border-color: var(--gold);
+    color: #7a5a10;
+  }
+  .word-chip-known {
+    background: #edf7f1;
+    border-color: var(--sage);
+    color: #2d5c3c;
+  }
+
+  .card {
+    @apply rounded-2xl p-6;
+    background: white;
+    border: 1px solid #e8e3da;
+  }
+
+  .tab-btn {
+    @apply px-4 py-2 rounded-full text-sm transition-all duration-200;
+    font-family: 'Syne', sans-serif;
+    color: #888;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .tab-btn:hover { color: var(--ink); background: #eee; }
+  .tab-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
